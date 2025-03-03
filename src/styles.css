@@ -1,1 +1,33 @@
-/* You can add global styles to this file, and also import other style files */
+@import "tailwindcss";
+
+body {
+    @apply bg-gray-500 p-5 flex justify-center items-center h-screen
+}
+
+h1 {
+    @apply text-4xl font-bold my-2
+}
+
+h2 {
+    @apply text-2xl font-semibold my-2
+}
+
+.todoList {
+    @apply text-white bg-gray-800 rounded-2xl p-3 mt-4 w-fit mb-16
+}
+
+li {
+    @apply grid grid-cols-3 items-center
+}
+
+button {
+    @apply w-24 font-semibold text-white bg-blue-500 my-2 rounded-2xl p-1 ml-2
+}
+
+form {
+    @apply bg-neutral-700 rounded-full px-3 my-2 gap-x-2
+}
+
+.todo-title {
+    @apply flex justify-between w-24 h-auto
+}

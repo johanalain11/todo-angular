@@ -1,0 +1,14 @@
+<li>
+    <p class="todo-title"><span>{{todoItem.title}}</span> <span>|</span></p>
+
+    @if (todoItem.completed) 
+        { <span class="green">Fait</span> } 
+    @else 
+        {<span class="red">Not Fait</span> }
+
+    @if (!todoItem.completed) 
+        {<span>| <button (click)="completeTodo(todoItem, true)">Valider</button> </span>} 
+    @else 
+        {<span>| <button (click)="completeTodo(todoItem, false)">Invalider</button> </span>}
+
+</li>

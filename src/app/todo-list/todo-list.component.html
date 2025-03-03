@@ -1,0 +1,10 @@
+<div class="todoList">
+    <h2>{{title}}</h2>
+    <form>
+        <input type="text" name="newTodo" placeholder="Entrer un nouveau Todo" />
+        <button (click)="addTodo()" >Ajouter</button>
+    </form>
+    @for (todoItem of todos; track todoItem.title) {
+        <app-todo-item [todoItem]="todoItem"></app-todo-item>
+    }
+</div>
