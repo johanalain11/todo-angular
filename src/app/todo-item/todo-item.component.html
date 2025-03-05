@@ -1,10 +1,12 @@
 <li>
     <p class="todo-title"><span>{{todoItem.title}}</span> <span>|</span></p>
 
+    <p class="todo-title"><span>{{todoItem.date}}</span> <span>|</span></p>
+
     @if (todoItem.completed) 
         { <span class="green">Fait</span> } 
     @else 
-        {<span class="red">Not Fait</span> }
+        {<span class="red">À faire</span> }
 
     @if (!todoItem.completed) 
         {<span>| <button (click)="completeTodo(todoItem, true)">Valider</button> </span>} 

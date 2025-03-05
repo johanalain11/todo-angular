@@ -17,6 +17,7 @@ import { Component, Input } from '@angular/core';
 })
 export class TodoItemComponent {
   title = 'Todo Item';
+  date = '01-01-2025';
   completed = false;
   @Input() todoItem: any;
 

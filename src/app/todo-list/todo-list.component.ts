@@ -15,16 +15,25 @@ import { TodoItemComponent } from '../todo-item/todo-item.component';
 export class TodoListComponent {
   title = 'Todo List';
   todos = [
-    { title: 'Todo 1', completed: false },
-    { title: 'Todo 2', completed: false },
-    { title: 'Todo 3', completed: false }
+    { title: 'Todo 1', date: '01-03-2025', completed: false },
+    { title: 'Todo 2', date: '02-03-2025',  completed: false },
+    { title: 'Todo 3', date: '03-03-2025',  completed: false }
   ];
+  newTodoTitle = '';
 
   addTodo() {
-    this.todos.push({ title: 'New Todo', completed: false });
+    if (this.newTodoTitle.trim()) {
+      this.todos.push({title: this.newTodoTitle, date: new Date().toLocaleDateString(), completed: false});
+      this.newTodoTitle = '';
+      console.log(this.newTodoTitle)
+    }
   }
 
   removeTodo() {
     this.todos.pop();
+  }
+
+  trackByTitle(index: number, item: any): string {
+    return item.title;
   }
 }

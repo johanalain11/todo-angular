@@ -1,10 +1,16 @@
 <div class="todoList">
     <h2>{{title}}</h2>
-    <form>
-        <input type="text" name="newTodo" placeholder="Entrer un nouveau Todo" />
-        <button (click)="addTodo()" >Ajouter</button>
+    <form (submit)="addTodo(); $event.preventDefault();">
+        <input 
+            type="text" 
+            [value]="newTodoTitle"
+            name="newTodo" 
+            placeholder="Entrer un nouveau Todo" />
+        <button (click)="addTodo()" type="submit">Ajouter</button>
     </form>
-    @for (todoItem of todos; track todoItem.title) {
-        <app-todo-item [todoItem]="todoItem"></app-todo-item>
-    }
+    <ul>
+        @for (todoItem of todos; track todoItem.title) {
+            <app-todo-item [todoItem]="todoItem"></app-todo-item>
+        }
+    </ul>
 </div>
