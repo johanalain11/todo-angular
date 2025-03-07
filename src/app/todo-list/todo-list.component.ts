@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { TodoItemComponent } from '../todo-item/todo-item.component';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-todo-list',
-  imports: [TodoItemComponent],
+  imports: [TodoItemComponent, FormsModule],
   templateUrl: './todo-list.component.html',
   styles: `
     p {
@@ -15,25 +16,20 @@ import { TodoItemComponent } from '../todo-item/todo-item.component';
 export class TodoListComponent {
   title = 'Todo List';
   todos = [
-    { title: 'Todo 1', date: '01-03-2025', completed: false },
-    { title: 'Todo 2', date: '02-03-2025',  completed: false },
-    { title: 'Todo 3', date: '03-03-2025',  completed: false }
+    { title: 'Todo 1', date: '01/03/2025', completed: false }
   ];
-  newTodoTitle = '';
+  
+  @Input() newTodoTitle = '';
+
 
   addTodo() {
     if (this.newTodoTitle.trim()) {
-      this.todos.push({title: this.newTodoTitle, date: new Date().toLocaleDateString(), completed: false});
+      this.todos.push({title: this.newTodoTitle, date: new Date().toLocaleDateString('fr-Fr'), completed: false});
       this.newTodoTitle = '';
-      console.log(this.newTodoTitle)
     }
   }
 
   removeTodo() {
     this.todos.pop();
-  }
-
-  trackByTitle(index: number, item: any): string {
-    return item.title;
   }
 }

@@ -1,16 +1,16 @@
 <li>
-    <p class="todo-title"><span>{{todoItem.title}}</span> <span>|</span></p>
+    <p><span>{{todoItem.title}}</span> <span>|</span></p>
 
-    <p class="todo-title"><span>{{todoItem.date}}</span> <span>|</span></p>
+    <p><span>{{todoItem.date}}</span> <span>|</span></p>
 
     @if (todoItem.completed) 
-        { <span class="green">Fait</span> } 
+        { <p class="green">Fait</p> } 
     @else 
-        {<span class="red">À faire</span> }
+        {<p class="red">À faire</p> }
 
     @if (!todoItem.completed) 
-        {<span>| <button (click)="completeTodo(todoItem, true)">Valider</button> </span>} 
+        {<p>| <button (click)="completeTodo(todoItem, true)">Valider</button> </p>} 
     @else 
-        {<span>| <button (click)="completeTodo(todoItem, false)">Invalider</button> </span>}
+        {<p>| <button (click)="completeTodo(todoItem, false)">Invalider</button> </p>}
 
 </li>

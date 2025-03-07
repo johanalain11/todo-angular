@@ -1,11 +1,11 @@
 @import "tailwindcss";
 
 body {
-    @apply bg-gray-500 p-5 flex justify-center items-center h-screen
+    @apply bg-[url(./assets/blob-scene.svg)] bg-cover bg-fixed
 }
 
 h1 {
-    @apply text-4xl font-bold my-2
+    @apply text-5xl font-bold text-white mt-32 text-center py-4
 }
 
 h2 {
@@ -13,7 +13,7 @@ h2 {
 }
 
 .todoList {
-    @apply text-white bg-gray-800 rounded-2xl p-3 mt-4 w-fit mb-16
+    @apply text-white bg-gray-900 rounded-2xl p-3 w-fit flex flex-col justify-center mx-auto
 }
 
 ul {
@@ -21,19 +21,19 @@ ul {
 }
 
 li {
-    @apply grid grid-cols-4 items-center
+    @apply grid grid-cols-4 items-center gap-x-2
 }
 
 button {
-    @apply w-24 font-semibold text-white bg-blue-500 my-2 rounded-2xl p-1 ml-2 hover:text-blue-500 hover:bg-white transition ease-in-out duration-500 hover:scale-105
+    @apply font-semibold text-white bg-blue-500 my-2 rounded-2xl px-2 py-1 ml-2 hover:text-blue-500 hover:bg-white transition ease-in-out duration-500 hover:scale-105
 }
 
 form {
     @apply bg-neutral-700 rounded-full px-3 my-2 gap-x-2 w-full justify-between flex items-center
 }
 
-.todo-title {
-    @apply flex justify-between w-24 h-auto
+p {
+    @apply flex justify-between w-28 min-h-12 items-center
 }
 
 input {

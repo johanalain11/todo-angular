@@ -3,7 +3,7 @@
     <form (submit)="addTodo(); $event.preventDefault();">
         <input 
             type="text" 
-            [value]="newTodoTitle"
+            [(ngModel)]="newTodoTitle"
             name="newTodo" 
             placeholder="Entrer un nouveau Todo" />
         <button (click)="addTodo()" type="submit">Ajouter</button>
